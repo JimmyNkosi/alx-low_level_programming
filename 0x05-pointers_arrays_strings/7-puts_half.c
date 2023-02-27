@@ -1,23 +1,31 @@
 #include "main.h"
 
 /**
- * puts_half - Prints out the first half of a string.
- * @str: input string to print.
+ * leet - convert characters into 1337
+ *
+ * @a: string to convert
+ *
+ * Return: string
  */
-void puts_half(char *str)
+char *leet(char *a)
 {
-	int i, j;
+	char *sptr = a;
+	int index = 0;
+	char translation[][10] = { { 'a', 'A', 't', 'T', 'o', 'O', 'e', 'E', 'l', 'L'}
+				  , { '4', '4', '7', '7', '0', '0', '3', '3', '1', '1'} };
 
-	while (str[i] != '\0')
-		i++;
-	if (i % 2 == 0)
-		j = i / 2;
-	else
-		j = (i + 1) / 2;
-	while (j < i)
+	while (*sptr != 0)
 	{
-		_putchar(str[j]);
-		j++;
+		if (*sptr == 'a' || *sptr == 'A' || *sptr == 'e' || *sptr == 'E'
+		    || *sptr == 'o' || *sptr == 'O' || *sptr == 't' || *sptr == 'T'
+		    || *sptr == 'l' || *sptr == 'L')
+		{
+			index = 0;
+			while (translation[0][index] != *sptr)
+				index++;
+			*sptr = translation[1][index];
+		}
+		sptr++;
 	}
-	_putchar('\n');
+	return (a);
 }
