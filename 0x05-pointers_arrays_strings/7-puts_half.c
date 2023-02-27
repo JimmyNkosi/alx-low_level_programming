@@ -1,31 +1,33 @@
 #include "main.h"
 
 /**
- * leet - convert characters into 1337
- *
- * @a: string to convert
- *
- * Return: string
+ * puts_half - prints half of a string
+ * followed by a new line
+ * @str: string to be printed
  */
-char *leet(char *a)
+void puts_half(char *str)
 {
-	char *sptr = a;
-	int index = 0;
-	char translation[][10] = { { 'a', 'A', 't', 'T', 'o', 'O', 'e', 'E', 'l', 'L'}
-				  , { '4', '4', '7', '7', '0', '0', '3', '3', '1', '1'} };
+	int len, n, i;
 
-	while (*sptr != 0)
+	len = 0;
+
+	while (str[len] != '\0')
 	{
-		if (*sptr == 'a' || *sptr == 'A' || *sptr == 'e' || *sptr == 'E'
-		    || *sptr == 'o' || *sptr == 'O' || *sptr == 't' || *sptr == 'T'
-		    || *sptr == 'l' || *sptr == 'L')
-		{
-			index = 0;
-			while (translation[0][index] != *sptr)
-				index++;
-			*sptr = translation[1][index];
-		}
-		sptr++;
+		len++;
 	}
-	return (a);
+
+	if (len % 2 == 0)
+	{
+		for (i = len / 2; str[i] != '\0'; i++)
+		{
+			_putchar(str[i]);
+		}
+	} else if (len % 2)
+	{
+		for (n = (len - 1) / 2; n < len - 1; n++)
+		{
+			_putchar(str[n + 1]);
+		}
+	}
+	_putchar('\n');
 }
