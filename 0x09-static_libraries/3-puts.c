@@ -1,20 +1,19 @@
 #include "holberton.h"
 
 /**
- * _puts - prints a string and a new line
- * @str: pointer to a string to print
+ * _puts - function that prints a string, followed by a new line, to stdout
  *
- * Return: 0
+ * @str: parameter defined in main
+ *
+ * Return: void
  */
 
 void _puts(char *str)
 {
-	int i = 0;
-
-	while (str[i])
+	while (*str != '\0')
 	{
-		_putchar(str[i]);
-		i++;
+		_putchar(*str);
+		str++;
 	}
 	_putchar('\n');
 }
