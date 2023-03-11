@@ -1,13 +1,15 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * *_memset - fills memory with a constant byte
- * @s: memory area to be filled
- * @b: char to copy
- * @n: number of times to copy b
+ * _memset - Fills the first n bytes of the memory area
+ *		pointed to by @s with the constant byte @c
+ * @s: A pointer to the memory area to be filled.
+ * @b: The character to fill the memory area with.
+ * @n: The number of bytes to be filled.
  *
- * Return: pointer to the memory area s
+ * Return: A pointer to the filled memory area @s.
  */
+
 char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
